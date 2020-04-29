@@ -1,5 +1,5 @@
 import React from "react";
 
-function Title() {
+export default function Title() {
   return <h1>Hi there!</h1>;
 }
