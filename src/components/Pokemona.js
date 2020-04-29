@@ -7,7 +7,12 @@ export default function Pokemona(props) {
       <p>Weight: {props.weight} kg</p>
       <p>Awesome: {props.awesome ? "YES!" : "nope, not really"}</p>
       <p>Terrifying: {props.terrifying ? "Very!" : "nah, cutie pie"}</p>
-      <p>Abilities: {props.abilities}</p>
+      <p>Abilities: </p>
+      <ul>
+        {props.abilities.map((ability) => {
+          return <li>{ability}</li>;
+        })}
+      </ul>
     </div>
   );
 }

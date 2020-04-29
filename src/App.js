@@ -1,10 +1,9 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Title from "./components/Title.js";
 import Pokemona from "./components/Pokemona.js";
 
-const all_pokemon = [
+const all_pokemona = [
   {
     name: "Charizard",
     weight: 90,
@@ -41,10 +40,22 @@ function App() {
       <main>
         <Title content="Title of your Web Tape" />
       </main>
-
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Pokemona />
+        <div className="row">
+          {all_pokemona.map((pokemona) => {
+            return (
+              <div className="col-md-6 col-lg-4">
+                <Pokemona
+                  name={pokemona.name}
+                  weight={pokemona.weight}
+                  awesome={pokemona.awesome}
+                  terrifying={pokemona.terrifying}
+                  abilities={pokemona.abilities}
+                />
+              </div>
+            );
+          })}
+        </div>
         <p>I'm not highly confident about this. Yet.</p>
         <a
           className="App-link"
